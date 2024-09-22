@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+// import MiniDrawer from "./common/Header";
+import MenuAppBar from "./common/Header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -28,8 +29,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <>
+      <html lang="en">
+        {/* <MiniDrawer open={true}> */}
+        <body className={inter.className}>
+          <MenuAppBar/>
+          {children}
+        </body>
+        {/* </MiniDrawer> */}
+      </html>
+    </>
+
   );
 }
